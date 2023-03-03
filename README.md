@@ -19,3 +19,5 @@ App preppes og startes med
 > yarn dev
 
 App blir da tilgjengelig på http://localhost:5173
+
+03.03.23: Modellerer version 0.1.0 på altinn-studio /frontend/dashboard/
