@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import { ReactComponent as AltinnIcon } from './assets/altinn-logo.svg';
+import { ReactComponent as AltinnIcon } from '../assets/altinn-logo.svg';
 // import { useNavigate } from 'react-router-dom'; // can only be used in the context
 // of a <Router> component. Får kjøre wrap i main.tsx senere.
 
-function App() {
+export const App = () => {
   const [count, setCount] = useState(0)
 
   // const navigate = useNavigate(); // bruk til link fra ikon
@@ -40,5 +40,3 @@ function App() {
     </div>
   )
 }
-
-export default App
