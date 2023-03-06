@@ -18,8 +18,11 @@ App preppes og startes med
 
 > yarn dev
 
-App blir da tilgjengelig på http://localhost:5173
+App blir da tilgjengelig på http://localhost:5173/dummyroot
 
 03.03.23: Modellerer version 0.1.0 på altinn-studio /frontend/dashboard/
 
-Har satt opp RouterBrowser og to Pages.
+Har satt opp RouterBrowser og to Pages. 
+Førsteside er : http://localhost:5173/dummyroot
+Andreside er: http://localhost:5173/dummyroot/andreside
+Har satt inn navigering nederst: Side [1] [2]

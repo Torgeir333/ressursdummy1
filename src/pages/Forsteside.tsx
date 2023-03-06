@@ -21,11 +21,11 @@ export const Forsteside = () => {
                 </button>
             </div>
 
-            
-            
-            
-            
-
+            <p> 
+                Naviger sider: 
+                [  <a href='http://localhost:5173/dummyroot'>1</a> ] 
+                [  <a href='http://localhost:5173/dummyroot/andreside'>2</a> ]
+            </p>
 
         </div>
     )
