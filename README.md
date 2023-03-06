@@ -25,4 +25,11 @@ App blir da tilgjengelig på http://localhost:5173/dummyroot
 Har satt opp RouterBrowser og to Pages. 
 Førsteside er : http://localhost:5173/dummyroot
 Andreside er: http://localhost:5173/dummyroot/andreside
-Har satt inn navigering nederst: Side [1] [2]
+Har satt inn navigering nederst: Side [1] [2] [3]
+
+Tredjesiden er her MiniDashboard der komponenter er hentet fra Studio /frontend/.<br>
+Har også satt til i18next og react-i18next og importert /language/ fra Studio /frontend/<br>
+
+Studio /frontend/ synes å være noe utdatert. Måtte fikse noen dobble imports, <br> 
+React import trengtes ikke, etc.<br>
+
