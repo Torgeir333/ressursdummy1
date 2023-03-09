@@ -27,9 +27,22 @@ Førsteside er : http://localhost:5173/dummyroot
 Andreside er: http://localhost:5173/dummyroot/andreside
 Har satt inn navigering nederst: Side [1] [2] [3]
 
-Tredjesiden er her MiniDashboard der komponenter er hentet fra Studio /frontend/.<br>
+Tredjesiden er her nå "MiniDashboard" der komponenter er hentet fra Studio /frontend/.<br>
+Dette inkluderer <Footer> komponent som gir lenker til eksterne ressurser.<br>
 Har også satt til i18next og react-i18next og importert /language/ fra Studio /frontend/<br>
+Dette gjør at Footer får språk-strengene den trenger.
 
-Studio /frontend/ synes å være noe utdatert. Måtte fikse noen dobble imports, <br> 
+Merk! Studio /frontend/ synes å være noe utdatert. Måtte fikse noen dobble imports, <br> 
 React import trengtes ikke, etc.<br>
+
+09.03.23: På tide å sette opp Redux State for dummy1 app.<br>
+Jeg vil modellere dette på datastruktur brukt i app-localtest repo, 
+som igjen synes å stamme fra altinn-resource-registry datastruktur, mer spesifikt:
+/src/Altinn.ResourceRegistry.Core/Models/ServiceResource.cs
+Se annotering i branch annotations_TH for denne filen, og sammenlign med
+/app-localtest/testdata/authorization/resources/Appid_400.json
+
+Så første delmål er å bruke Appid_400.json fil som mal for initial state
+av Redux State.
+
 
