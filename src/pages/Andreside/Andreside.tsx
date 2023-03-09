@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Sider.css';
 import { ReactComponent as AltinnIcon } from '../../assets/altinn-logo.svg';
+import { ResourceView } from '../../features/resource/ResourceView';
 
 
 export const Andreside = () => {
@@ -14,13 +15,15 @@ export const Andreside = () => {
                     <AltinnIcon />
                 </a>
             </div>
-            <h1>Ressursprosjekt Andreside</h1>
+            <h1>Ressursprosjekt Redux State</h1>
             <div className="card">
-                <p>Her kan du teste interaksjon ved å trykke på teller: </p>
-                <button onClick={() => setCount((count) => count + 1)}>
-                    Teller er: {count}
-                </button>
+                <p>
+                    Her kan du teste interaksjon med Redux State ved å trykke på knapper.<br></br>
+                    Merk at Naviger Sider nedunder her ennå ikke bruker BrowserRouter, <br></br>
+                    så ny html innlasting gir nullstilling av State.
+                </p>
             </div>
+            <ResourceView />
 
             <p> 
                 Naviger sider: 
