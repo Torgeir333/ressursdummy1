@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { ReactComponent as AltinnIcon } from '../../assets/altinn-logo.svg';
 import './Sider.css';
+import { useNavigate } from 'react-router-dom'; 
+
 
 export const Forsteside = () => {
 
     const [count, setCount] = useState(0)
+    const navigate = useNavigate(); 
 
     return (
         <div className='forsteSide'>
@@ -22,10 +25,10 @@ export const Forsteside = () => {
             </div>
 
             <p> 
-                Naviger sider: 
-                [  <a href='http://localhost:5173/dummyroot'>1</a> ] 
-                [  <a href='http://localhost:5173/dummyroot/andreside'>2</a> ]
-                [  <a href='http://localhost:5173/dummyroot/minidashboard'>3</a> ]
+                Naviger sider:  
+                <span onClick={() => navigate('/')}> [ 1 ]</span>  
+                <span onClick={() => navigate('/andreside/')}>[ 2 ]</span> 
+                <span onClick={() => navigate('/minidashboard/')}>[ 3 ]</span> 
             </p>
 
         </div>

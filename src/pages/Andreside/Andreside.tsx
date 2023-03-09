@@ -2,11 +2,12 @@ import { useState } from 'react';
 import './Sider.css';
 import { ReactComponent as AltinnIcon } from '../../assets/altinn-logo.svg';
 import { ResourceView } from '../../features/resource/ResourceView';
+import { useNavigate } from 'react-router-dom'; 
 
 
 export const Andreside = () => {
 
-    const [count, setCount] = useState(0)
+    const navigate = useNavigate(); 
 
     return (
         <div className='andreSide'>
@@ -19,17 +20,17 @@ export const Andreside = () => {
             <div className="card">
                 <p>
                     Her kan du teste interaksjon med Redux State ved å trykke på knapper.<br></br>
-                    Merk at Naviger Sider nedunder her ennå ikke bruker BrowserRouter, <br></br>
-                    så ny html innlasting gir nullstilling av State.
+                    Naviger Sider bruker nå BrowserRouter og useNavigate() hook <br></br>
+                    så sideskifte gir ikke nullstilling av State.
                 </p>
             </div>
             <ResourceView />
 
             <p> 
-                Naviger sider: 
-                [  <a href='http://localhost:5173/dummyroot'>1</a> ] 
-                [  <a href='http://localhost:5173/dummyroot/andreside'>2</a> ]
-                [  <a href='http://localhost:5173/dummyroot/minidashboard'>3</a> ]
+                Naviger sider:  
+                <span onClick={() => navigate('/')}> [ 1 ]</span>  
+                <span onClick={() => navigate('/andreside/')}>[ 2 ]</span> 
+                <span onClick={() => navigate('/minidashboard/')}>[ 3 ]</span> 
             </p>
         </div>
     )

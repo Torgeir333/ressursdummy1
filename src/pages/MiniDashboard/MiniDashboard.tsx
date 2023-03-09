@@ -3,9 +3,12 @@ import classes from './MiniDashboard.module.css';
 import './Sider.css';
 import { CenterContainer } from '../../components/CenterContainer';
 import { Footer } from '../../components/Footer';
+import { useNavigate } from 'react-router-dom'; 
+
 
 export const MiniDashboard = () => {
-    // skal sette inn enkel versjon av Dashboard her
+    // setter inn forenklet versjon av Dashboard her
+    const navigate = useNavigate(); 
 
     return (
         <div>
@@ -15,10 +18,10 @@ export const MiniDashboard = () => {
                 </h1>
 
                 <p> 
-                    Naviger sider: 
-                    [  <a href='http://localhost:5173/dummyroot'>1</a> ] 
-                    [  <a href='http://localhost:5173/dummyroot/andreside'>2</a> ]
-                    [  <a href='http://localhost:5173/dummyroot/minidashboard'>3</a> ]
+                    Naviger sider:  
+                    <span onClick={() => navigate('/')}> [ 1 ]</span>  
+                    <span onClick={() => navigate('/andreside/')}>[ 2 ]</span> 
+                    <span onClick={() => navigate('/minidashboard/')}>[ 3 ]</span> 
                 </p>
 
             </CenterContainer>
