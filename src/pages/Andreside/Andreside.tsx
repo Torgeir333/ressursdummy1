@@ -38,20 +38,20 @@ export const Andreside = () => {
                 <span onClick={() => navigate('/minidashboard/')}>[ 3 ]</span> 
             </p>
 
-            <div className="card">
+            <div>
                 <p>
-                    Her kan du teste interaksjon med Redux State ved å trykke på knapper.<br></br>
-                    Naviger Sider bruker nå BrowserRouter og useNavigate() hook <br></br>
-                    så sideskifte gir ikke nullstilling av State.
+                    Her kan du teste interaksjon med Redux State ved å trykke på knappene.<br></br>
+                    
                 </p>
             </div>
             
             <ResourceView />
 
-            <p> Her kommer hele .json innhold:</p>
+            <p> <b>Her kommer hele .json innhold:</b><br></br>
+                (merk at .json kommer fra state og endres dynamisk med trykk)
+            </p>
+
             <PrettyResource />
-
-
         </div>
     )
 };
