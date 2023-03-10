@@ -28,7 +28,7 @@ Andreside er: http://localhost:5173/dummyroot/andreside
 Har satt inn navigering nederst: Side [1] [2] [3]
 
 Tredjesiden er her nå "MiniDashboard" der komponenter er hentet fra Studio /frontend/.<br>
-Dette inkluderer <Footer> komponent som gir lenker til eksterne ressurser.<br>
+Dette inkluderer Footer komponent som gir lenker til eksterne ressurser.<br>
 Har også satt til i18next og react-i18next og importert /language/ fra Studio /frontend/<br>
 Dette gjør at Footer får språk-strengene den trenger.
 
