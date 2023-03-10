@@ -23,6 +23,15 @@ span:hover {
   color: lightblue;
 }
 
+.andreSide {
+  text-align: left;
+}
+
+.forsteSide {
+  text-align: left;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -33,7 +42,7 @@ a {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  place-items: leftd;
   min-width: 320px;
   min-height: 100vh;
 }

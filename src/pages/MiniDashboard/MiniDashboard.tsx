@@ -7,7 +7,9 @@ import { useNavigate } from 'react-router-dom';
 
 
 export const MiniDashboard = () => {
+
     // setter inn forenklet versjon av Dashboard her
+    // Merk as .css kommer fra (minst) 3 kilder: må ryddes
     const navigate = useNavigate(); 
 
     return (

@@ -17,12 +17,6 @@ export const Forsteside = () => {
                 </a>
             </div>
             <h1>Ressursprosjekt Førsteside</h1>
-            <div className="card">
-                <p>Her kan du teste interaksjon ved å trykke på teller: </p>
-                <button onClick={() => setCount((count) => count + 1)}>
-                    Teller er: {count}
-                </button>
-            </div>
 
             <p> 
                 Naviger sider:  
@@ -31,6 +25,13 @@ export const Forsteside = () => {
                 <span onClick={() => navigate('/minidashboard/')}>[ 3 ]</span> 
             </p>
 
+
+            <div className="card">
+                <p>Her kan du teste interaksjon ved å trykke på teller: </p>
+                <button onClick={() => setCount((count) => count + 1)}>
+                    Teller er: {count}
+                </button>
+            </div>
         </div>
     )
 };
