@@ -35,15 +35,16 @@ Dette gjør at Footer får språk-strengene den trenger.
 Merk! Studio /frontend/ synes å være noe utdatert. Måtte fikse noen dobble imports, <br> 
 React import trengtes ikke, etc.<br>
 
-09.03.23: På tide å sette opp Redux State for dummy1 app.<br>
-Jeg vil modellere dette på datastruktur brukt i app-localtest repo, 
+10.03.23: Redux State er etablert for dummy1 app.<br>
+Datastruktur brukt er fra app-localtest repo, 
 som igjen synes å stamme fra altinn-resource-registry datastruktur, mer spesifikt:
 /src/Altinn.ResourceRegistry.Core/Models/ServiceResource.cs
 Se annotering i branch annotations_TH for denne filen, og sammenlign med
 /app-localtest/testdata/authorization/resources/Appid_400.json
 
-Så første delmål er å bruke Appid_400.json fil som mal for initial state
-av Redux State.
+Så Appid_400.json ligger nå som state i dummy1 app. State kan nås og vises,
+og kan endres ved to knapper.
+
 
   > Appid_400.json : 
   

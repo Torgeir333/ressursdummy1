@@ -26,6 +26,8 @@ export const MiniDashboard = () => {
                     <span onClick={() => navigate('/minidashboard/')}>[ 3 ]</span> 
                 </p>
 
+                <p>Denne siden bygges gradvis opp etter Altinn Studio Frontend Dashboard mønster.</p>
+
             </CenterContainer>
             <Footer />
         </div>
