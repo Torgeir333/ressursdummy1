@@ -33,7 +33,7 @@ Har også satt til i18next og react-i18next og importert /language/ fra Studio /
 Dette gjør at Footer får språk-strengene den trenger.
 
 Merk! Studio /frontend/ synes å være noe utdatert. Måtte fikse noen dobble imports, <br> 
-React import trengtes ikke, etc.<br>
+React import trengtes ikke (tror det kom med React17 til 18?!), etc.<br>
 
 10.03.23: Redux State er etablert for dummy1 app.<br>
 Datastruktur brukt er fra app-localtest repo, 
