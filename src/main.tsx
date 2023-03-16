@@ -20,6 +20,7 @@ i18next.use(initReactI18next).init({
   fallbackLng: 'nb',
 });
 
+// wrap av app vil gi tilgang til alle hooks og metoder i React Query
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
