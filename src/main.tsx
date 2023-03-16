@@ -9,6 +9,7 @@ import nb from './language/src/nb.json';
 import en from './language/src/en.json';
 import { App } from './app/App';
 import './index.css' ; // fixme: clean up global css
+import { QueryClientProvider, QueryClient } from 'react-query';
 
 i18next.use(initReactI18next).init({
   lng: 'nb',
@@ -19,12 +20,14 @@ i18next.use(initReactI18next).init({
   fallbackLng: 'nb',
 });
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+const queryClient = new QueryClient();
 
-  <Provider store = { store }>
-    <BrowserRouter basename='dummyroot'>
-      <App />
-    </BrowserRouter>
-  </Provider>
-  
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <QueryClientProvider client={queryClient} >
+    <Provider store = { store }>
+      <BrowserRouter basename='dummyroot'>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </QueryClientProvider>
 );
