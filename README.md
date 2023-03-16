@@ -25,7 +25,7 @@ App blir da tilgjengelig på http://localhost:5173/dummyroot
 Har satt opp RouterBrowser og to Pages. 
 Førsteside er : http://localhost:5173/dummyroot
 Andreside er: http://localhost:5173/dummyroot/andreside
-Har satt inn navigering nederst: Side [1] [2] [3]
+Har satt inn navigering : Side [1] [2] [3] [4]
 
 Tredjesiden er her nå "MiniDashboard" der komponenter er hentet fra Studio /frontend/.<br>
 Dette inkluderer Footer komponent som gir lenker til eksterne ressurser.<br>
@@ -42,8 +42,16 @@ som igjen synes å stamme fra altinn-resource-registry datastruktur, mer spesifi
 Se annotering i branch annotations_TH for denne filen, og sammenlign med
 /app-localtest/testdata/authorization/resources/Appid_400.json
 
-Så Appid_400.json ligger nå som state i dummy1 app. State kan nås og vises,
+Så Appid_400.json ligger nå nederst som state i dummy1 app. State kan nås og vises,
 og kan endres ved to knapper.
+
+16.03.23: Har laget en fjerde side som tester ut React Query kall
+til JsonPlaceholder website. Akkurat nå kalles det til en 404-feil,
+for å demonstrere asynkron isLoading og feil-håndtering.
+
+
+*******************************
+Appendix Appid_400.json:
 
 
   > Appid_400.json : 
