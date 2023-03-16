@@ -2,13 +2,11 @@ import { useState } from 'react';
 import './Sider.css';
 import { ReactComponent as AltinnIcon } from '../../assets/altinn-logo.svg';
 import { ResourceView } from '../../features/resource/ResourceView';
-import { useNavigate } from 'react-router-dom';
+import { NavigeringsKomponent } from '../../components/NavigeringsKomponent';
 import { useSelector } from 'react-redux';
 
 
 export const Andreside = () => {
-
-    const navigate = useNavigate(); 
 
     // Henter hele .json
     const testResource = useSelector( (state) => state.resource) ;
@@ -31,12 +29,7 @@ export const Andreside = () => {
             </div>
             <h1>Ressursprosjekt Redux State</h1>
 
-            <p> 
-                Naviger sider:  
-                <span onClick={() => navigate('/')}> [ 1 ]</span>  
-                <span onClick={() => navigate('/andreside/')}>[ 2 ]</span> 
-                <span onClick={() => navigate('/minidashboard/')}>[ 3 ]</span> 
-            </p>
+            <NavigeringsKomponent />
 
             <div>
                 <p>

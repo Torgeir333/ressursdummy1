@@ -3,7 +3,7 @@ import classes from './MiniDashboard.module.css';
 import './Sider.css';
 import { CenterContainer } from '../../components/CenterContainer';
 import { Footer } from '../../components/Footer';
-import { useNavigate } from 'react-router-dom'; 
+import { NavigeringsKomponent } from '../../components/NavigeringsKomponent';
 
 
 export const MiniDashboard = () => {
@@ -24,7 +24,6 @@ export const MiniDashboard = () => {
     // hva slags problemer de hadde før DesignSystem... AltinnStudioLogo er en 
     // funksjon (!) som returnerer en <svg...  
 
-    const navigate = useNavigate(); 
 
     return (
         <div>
@@ -33,14 +32,13 @@ export const MiniDashboard = () => {
                     MiniDashboard
                 </h1>
 
-                <p> 
-                    Naviger sider:  
-                    <span onClick={() => navigate('/')}> [ 1 ]</span>  
-                    <span onClick={() => navigate('/andreside/')}>[ 2 ]</span> 
-                    <span onClick={() => navigate('/minidashboard/')}>[ 3 ]</span> 
-                </p>
+                <NavigeringsKomponent />
 
-                <p>Denne siden bygges gradvis opp etter Altinn Studio Frontend Dashboard mønster.</p>
+                <p>
+                    Denne siden bygges gradvis opp etter Altinn Studio Frontend Dashboard mønster.<br></br>
+                    Men merk at Studio Dashboard side/page er delt i to mellom App og Dashboard.<br></br>
+                    Så Header ligger faktisk i App-komponent. Skal erstatte den med DesignSystem Header.
+                </p>
 
             </CenterContainer>
             <Footer />
