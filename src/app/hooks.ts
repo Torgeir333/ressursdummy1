@@ -1,5 +1,5 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import type { RootState, AppDispatch} from './store'
+import type { RootState, AppDispatch } from './store'
 
 // Fra repo react-rtk-ts-demo:
 // video31, 8:37 "We are going to export the typed versions of
