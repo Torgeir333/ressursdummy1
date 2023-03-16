@@ -46,8 +46,11 @@ Så Appid_400.json ligger nå nederst som state i dummy1 app. State kan nås og 
 og kan endres ved to knapper.
 
 16.03.23: Har laget en fjerde side som tester ut React Query kall
-til JsonPlaceholder website. Akkurat nå kalles det til en 404-feil,
-for å demonstrere asynkron isLoading og feil-håndtering.
+til JsonPlaceholder website. Kan nå skifte URL som skal gi en 404-feil,
+for å demonstrere asynkron isLoading og feil-håndtering, men det 
+virker som om React Query likevel trenger reload av siden. Mulig
+caching (isLoading blir ikke oppdatert, og data-objektet forblir tilgjengelig,
+så her trengs mer arbeid.)
 
 
 *******************************

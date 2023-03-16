@@ -71,8 +71,8 @@ export const QuerySide = () => {
                     'https://jsonplaceholder.typicode.com/usersxxx' som gir 404-feil. React Query<br></br>
                     prøver igjen hver gang denne siden blir rendret (og det 4 ganger), men app er stabil, <br></br>
                     som man ser av Redux state testProperty fra Redux siden [2]. <br></br>
-                    Vurderer å sette en knapp for valg av URL: rett eller ikke rett, som på <br></br>
-                    Redux-siden.
+                    Har satt en knapp for valg av URL: rett eller ikke rett, men Axios kall trenger<br></br>
+                    ennå reload av hele siden (mulig React Query caching bug).
                 </p>
             </div>
            
