@@ -59,7 +59,9 @@ export const QuerySide = () => {
                     Legg merke til at Redux state er stabil, selv om URL nå er satt til<br></br>
                     'https://jsonplaceholder.typicode.com/usersxxx' som gir 404-feil. React Query<br></br>
                     prøver igjen hver gang denne siden blir rendret (og det 4 ganger), men app er stabil, <br></br>
-                    som man ser av Redux state testProperty fra Redux siden [2]. 
+                    som man ser av Redux state testProperty fra Redux siden [2]. <br></br>
+                    Vurderer å sette en knapp for valg av URL: rett eller ikke rett, som på <br></br>
+                    Redux-siden.
                 </p>
             </div>
             <br></br>
