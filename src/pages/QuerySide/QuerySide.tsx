@@ -5,6 +5,7 @@ import { NavigeringsKomponent } from '../../components/NavigeringsKomponent';
 import { useSelector } from 'react-redux';
 import { useQuery } from 'react-query'; // importerer en hook fra React Query
 import axios from 'axios'; // blir brukt av React Query useQuery()
+import { TestUrlView } from '../../features/testurl/TestUrlView';
 
 
 export const QuerySide = () => {
@@ -18,8 +19,18 @@ export const QuerySide = () => {
     // vi destrukturerer ut, som isLoading, data, error etc...
     // så dette er forenklet (merk at error egentlig er i video4)
 
+    // For interaksjon med URL: men en ny Query blir ikke trigget.
+    // Må vel løfte testURL opp til Redux State
+    // const [testURL, setTestURL] = useState('https://jsonplaceholder.typicode.com/users');
+
+    // Henter URL fra Redux state:
+    const testURL = useSelector( (state) => state.testurl.url);
+    console.log("Er på side4: testURL = " + testURL); // 
+
+    // Rart at denne ikke blir kjørt igjen bare ved lokal re-render
+    // men om man navigerer vekk og tilbake så blir den kjørt igjen
     const {isLoading, data, isError, error} = useQuery('unikQueryId1', () => {
-        return axios.get('https://jsonplaceholder.typicode.com/usersxxx')
+        return axios.get(testURL)
     })
 
     // Henter hele .json
@@ -33,7 +44,7 @@ export const QuerySide = () => {
         )
     }
    
-
+    
     return (
         <div className='andreSide'>
             <div>
@@ -64,6 +75,14 @@ export const QuerySide = () => {
                     Redux-siden.
                 </p>
             </div>
+           
+            <TestUrlView />
+            <p>
+                BUG: man må ennå navigere til annen side og tilbake for å trigge ny Axios innlasting.<br></br>
+                Mulig det er React Query caching eller noe. Hmm... heller ikke isLoading blir oppdatert. <br></br>
+                Men nå er URL interaktiv i alle fall. Mulig feil URL burde settes først.
+            </p>
+           
             <br></br>
             <div>
                 <h2>React Query async aktivitet her:</h2>
@@ -80,12 +99,12 @@ export const QuerySide = () => {
                     OK rent error-objekt går ikke, men error.message går.
                 </p>
 
-                <p>Her er/var isLoading beskjed OK</p>
+                <p>Her er/var isLoading beskjed OK: merk! ikke brukt ved reload</p>
                 { isLoading && 
                     <h3>Is Loading...</h3>
                 }
 
-                <p>Viser data innkommet (om noe)</p>
+                <p>Viser data innkommet (om noe): merk! ikke fjernet ved reload</p>
                 { data &&
                     <div>
                        <h3>Her kommer data.users-array length:</h3> 
