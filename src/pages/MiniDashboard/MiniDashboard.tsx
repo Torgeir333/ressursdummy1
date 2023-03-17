@@ -4,6 +4,7 @@ import './Sider.css';
 import { CenterContainer } from '../../components/CenterContainer';
 import { Footer } from '../../components/Footer';
 import { NavigeringsKomponent } from '../../components/NavigeringsKomponent';
+import { ReactComponent as AltinnIcon } from '../../assets/altinn-logo.svg';
 
 
 export const MiniDashboard = () => {
@@ -27,7 +28,13 @@ export const MiniDashboard = () => {
 
     return (
         <div>
+            
             <CenterContainer>
+                <div>
+                    <a href="https://www.altinn.no" target="_blank">
+                        <AltinnIcon />
+                    </a>
+                </div>
                 <h1 className={classes.testh1}>
                     Ressursprosjekt MiniDashboard
                 </h1>

@@ -20,6 +20,9 @@ export const Forsteside = () => {
 
             <NavigeringsKomponent />
 
+            <p>Første iterasjon av Ressurs-prosjektet er her oppe og kjører.</p>
+            <br></br>
+
             <div className="card">
                 <p>Her kan du teste interaksjon med lokal state ved å trykke på teller: </p>
                 <button onClick={() => setCount((count) => count + 1)}>
