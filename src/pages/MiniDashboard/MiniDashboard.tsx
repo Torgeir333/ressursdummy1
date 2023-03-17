@@ -29,7 +29,7 @@ export const MiniDashboard = () => {
         <div>
             <CenterContainer>
                 <h1 className={classes.testh1}>
-                    MiniDashboard
+                    Ressursprosjekt MiniDashboard
                 </h1>
 
                 <NavigeringsKomponent />
@@ -37,7 +37,13 @@ export const MiniDashboard = () => {
                 <p>
                     Denne siden bygges gradvis opp etter Altinn Studio Frontend Dashboard mønster.<br></br>
                     Men merk at Studio Dashboard side/page er delt i to mellom App og Dashboard.<br></br>
-                    Så Header ligger faktisk i App-komponent. Skal erstatte den med DesignSystem Header.
+                    Så Header ligger faktisk i App-komponent. Skal erstatte den med DesignSystem Header.<br></br>
+                    <br></br>
+                    Denne siden demonstrerer integrasjon med Studio /frontend/ ettersom flere <br></br>
+                    subkomponenter er hentet utenfor selve /dashboard/. <br></br>
+                    <br></br>
+                    MiniDashboard Footer krever også Language, i.e. språkstøtte, via i18next, som <br></br>
+                    settes i main.tsx, mens språkfilene ligger nå lokalt i /language/
                 </p>
 
             </CenterContainer>

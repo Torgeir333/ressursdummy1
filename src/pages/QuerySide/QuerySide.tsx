@@ -58,46 +58,35 @@ export const QuerySide = () => {
 
             <div>
                 <p>
-                    Her skal vi hente inn ny ressurs (.json) fra LocalTest Docker Container.<br></br>
+                    Her er planen at vi skal vi hente inn ny ressurs (.json) fra LocalTest Docker Container.<br></br>
                     Bakgrunn er at Studio Dashboard nylig fjernet all Redux for fetch håndtering etc.<br></br>
                     Det ble erstattet med React Query, som er verdt å teste ut for henting av Ressurs-data.<br></br>
                     <br></br>
-                    Testkode for første runde hentes fra 'https://jsonplaceholder.typicode.com/users'<br></br>
-                    som brukt i repo react-rtk-ts-demo, userSlice.ts med Axios. <br></br>
+                    Testdata for første runde hentes fra <br></br>
+                    <a href='https://jsonplaceholder.typicode.com/users'>
+                      'https://jsonplaceholder.typicode.com/users'</a><br></br>
+                    som jeg har brukt i repo react-rtk-ts-demo, userSlice.ts med Axios. <br></br>
                     JsonPlaceholder returnerer en array med 10 .json objekter.<br></br>
-                    React Query kode hentes fra ditto Vishwas video3 og video4 (se notater).<br></br>
+                    Se notater for React Query kode.<br></br>
                     <br></br>
-                    Legg merke til at Redux state er stabil, selv om URL nå er satt til<br></br>
-                    'https://jsonplaceholder.typicode.com/usersxxx' som gir 404-feil. React Query<br></br>
-                    prøver igjen hver gang denne siden blir rendret (og det 4 ganger), men app er stabil, <br></br>
-                    som man ser av Redux state testProperty fra Redux siden [2]. <br></br>
-                    Har satt en knapp for valg av URL: rett eller ikke rett, men Axios kall trenger<br></br>
-                    ennå reload av hele siden (mulig React Query caching bug).
+                    Legg merke til at Redux state er stabil, selv om URL blir satt til<br></br>
+                    'https://jsonplaceholder.typicode.com/usersxxx' som gir 404-feil. Merk også React Query<br></br>
+                    prøver igjen hver gang man navigerer til denne siden (og det med 4 reptisjon, se konsol) <br></br>
+                    <br></br>
+                    Har satt en knapp for valg av rett/feil URL. Men Axios kall trenger<br></br>
+                    ennå reload av hele siden. Tror React Query har avanserte cache systemer som forstyrrer. <br></br>
+                    Merk! Man kan få Hot Update av komponent uten å forstyrre state.<br></br>
+                    Må være en Vite ting, men kult.
                 </p>
             </div>
            
             <TestUrlView />
-            <p>
-                BUG: man må ennå navigere til annen side og tilbake for å trigge ny Axios innlasting.<br></br>
-                Mulig det er React Query caching eller noe. Hmm... heller ikke isLoading blir oppdatert. <br></br>
-                Men nå er URL interaktiv i alle fall. Mulig feil URL burde settes først.
-            </p>
+            
            
             <br></br>
             <div>
-                <h2>React Query async aktivitet her:</h2>
-                <p>
-                    Merk! Man kan få Hot Update av komponent uten å forstyrre state.<br></br>
-                    Må være en Vite ting, men kult.<br></br>
-                    <br></br>
-                    Her skal retur data fra useQuery() brukes, <br></br>
-                    med inline rendering med && operatør. Så optional chaining.<br></br>
-                    isLoading var svært rask, men var der. Lengde på data array<br></br>
-                    skulle være, og er, 10, OK. Med 404-feil (endret URL) så <br></br>
-                    prøver Axios/Query 4 ganger, men error håndtering svikter<br></br>
-                    muligens fordi React feil: objects not valid as React child.<br></br>
-                    OK rent error-objekt går ikke, men error.message går.
-                </p>
+                <h2>React Query async aktivitet under her:</h2>
+               
 
                 <p>Her er/var isLoading beskjed OK: merk! ikke brukt ved reload</p>
                 { isLoading && 
@@ -112,7 +101,7 @@ export const QuerySide = () => {
                     </div>
                 }
 
-                <p>Her kommer feilmelding (etter 4 forsøk fra React Query ): </p>
+                <p>Her kommer feilmelding (etter 4 forsøk fra React Query, derav forsinkelse ): </p>
                 { isError &&
                     <div>
                         <h3>React Query useQuery kall via Axios gav error.message:</h3>
@@ -122,6 +111,15 @@ export const QuerySide = () => {
 
             </div>
             
+            <p>     <b>Kommentarer på React Query: </b>
+                    Retur data fra useQuery() brukes over her, <br></br>
+                    med inline rendering med && operatør. Så optional chaining.<br></br>
+                    isLoading var svært rask, men var der. Lengde på data array<br></br>
+                    skulle være, og er, 10, OK. Med 404-feil (endret URL) så <br></br>
+                    prøver Axios/Query 4 ganger. Error håndtering svikter<br></br>
+                    React feil: "objects not valid as React child".<br></br>
+                    Fikset: rent error-objekt går ikke, men error.message går.
+                </p>
                         
             <br></br>
             <br></br>

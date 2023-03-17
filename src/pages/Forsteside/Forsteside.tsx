@@ -21,10 +21,14 @@ export const Forsteside = () => {
             <NavigeringsKomponent />
 
             <div className="card">
-                <p>Her kan du teste interaksjon ved å trykke på teller: </p>
+                <p>Her kan du teste interaksjon med lokal state ved å trykke på teller: </p>
                 <button onClick={() => setCount((count) => count + 1)}>
                     Teller er: {count}
                 </button>
+                <p>
+                    På neste side [2] kan du interagere med Redux State som bevarer informasjon<br></br>
+                    selv om du navigerer rundt.
+                </p>
             </div>
         </div>
     )

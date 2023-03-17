@@ -33,15 +33,16 @@ export const Andreside = () => {
 
             <div>
                 <p>
-                    Her kan du teste interaksjon med Redux State ved å trykke på knappene.<br></br>
+                    Her kan du teste interaksjon med en "ressurs" i Redux State ved å trykke på knappene.<br></br>
                     
                 </p>
             </div>
             
             <ResourceView />
 
-            <p> <b>Her kommer hele .json innhold:</b><br></br>
-                (merk at .json kommer fra state og endres dynamisk med trykk)
+            <br></br>
+            <p> <b>En "ressurs" i form av .json innhold fra Redux State vises her:</b><br></br>
+                (merk at "testproperty" i .json under her endres dynamisk med knappetrykk)
             </p>
 
             <PrettyResource />
