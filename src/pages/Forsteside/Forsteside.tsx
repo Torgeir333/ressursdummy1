@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { ReactComponent as AltinnIcon } from '../../assets/altinn-logo.svg';
+
+
 import './Sider.css';
 import { NavigeringsKomponent } from '../../components/NavigeringsKomponent';
+import { ReactComponent as AltinnIcon } from '../../assets/altinn-logo.svg';
 
 
 
