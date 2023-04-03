@@ -1,0 +1,1 @@
+export { Ressurs1 } from './Ressurs1';

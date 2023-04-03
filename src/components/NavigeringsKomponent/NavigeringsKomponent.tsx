@@ -1,7 +1,5 @@
 
-// brukes til å navigere mellom sider,
-// spesielt når jeg nå lager side 4 er det
-// på tide å dra kode ut til egen komponent
+// brukes til å navigere mellom sider i app
 
 import { useNavigate } from 'react-router-dom'; 
 
@@ -13,7 +11,8 @@ export const NavigeringsKomponent = () => {
         <span onClick={() => navigate('/')}> [ 1 ]</span>  
         <span onClick={() => navigate('/andreside/')}>[ 2 ]</span> 
         <span onClick={() => navigate('/minidashboard/')}>[ 3 ]</span> 
-        <span onClick={() => navigate('/queryside/')}>[ 4 ]</span> 
+        <span onClick={() => navigate('/queryside/')}>[ 4 ]</span>
+        <span onClick={() => navigate('/ressurs1/')}>[ 5 ]</span>  
     </p>
     )
 }

@@ -52,6 +52,19 @@ virker som om React Query likevel trenger reload av siden. Mulig
 caching (isLoading blir ikke oppdatert, og data-objektet forblir tilgjengelig,
 så her trengs mer arbeid.)
 
+31.03.23
+AccManFrontend setter bakgrunn i index.html,
+slik: <html lang="no" style="background-color: #1EADF7;">
+Så bygger den sider på toppen som er hvite.
+
+Men Sigurd og Indias skisser har et kryssbanner (#78C1F9),
+som igjen er krysset vertikalt av 2 hvite sider,
+ned til et felt som igjen er hvit (se Figma Sharing is Caring).
+
+Ja, men det er satt avrundede hjørner, og skygge (type card, har brukt dette selv),
+så bakgrunn og forgrunn blir adskilt.
+
+
 
 *******************************
 Appendix Appid_400.json:

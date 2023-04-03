@@ -1,0 +1,17 @@
+{
+"ServiceOwnerCode":"STAMI",
+"ServiceOwnerName":"National Institute of Occupational Health",
+"ServiceName":"AIP Samtykke",
+"ServiceCode":"5735",
+"ServiceEditionName":"Samtykkeerklæring Medarbeiderundersøkelsen i staten - MUST",
+"ServiceEditionCode":1,
+"ValidFrom":"2022-03-31T08:22:01.067",
+"ValidTo":"2045-12-31T00:00:00",
+"ServiceType":"Link",
+"EnterpriseUserEnabled":true,
+"ConfidentialService":false,
+"_links": {  "rolerequirements": { 
+                "href":"https://www.altinn.no/api/metadata/rolerequirements?serviceCode=5735&serviceEditionCode=1"
+                }
+          }
+}
