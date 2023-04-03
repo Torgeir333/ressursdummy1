@@ -20,12 +20,13 @@ App preppes og startes med
 
 App blir da tilgjengelig på http://localhost:5173/dummyroot
 
+
 03.03.23: Modellerer version 0.1.0 på altinn-studio /frontend/dashboard/
 
 Har satt opp RouterBrowser og to Pages. 
 Førsteside er : http://localhost:5173/dummyroot
 Andreside er: http://localhost:5173/dummyroot/andreside
-Har satt inn navigering : Side [1] [2] [3] [4]
+Har satt inn navigering : Side [1] [2] [3] [4] [5]
 
 Tredjesiden er her nå "MiniDashboard" der komponenter er hentet fra Studio /frontend/.<br>
 Dette inkluderer Footer komponent som gir lenker til eksterne ressurser.<br>
@@ -53,16 +54,13 @@ caching (isLoading blir ikke oppdatert, og data-objektet forblir tilgjengelig,
 så her trengs mer arbeid.)
 
 31.03.23
-AccManFrontend setter bakgrunn i index.html,
-slik: <html lang="no" style="background-color: #1EADF7;">
-Så bygger den sider på toppen som er hvite.
-
-Men Sigurd og Indias skisser har et kryssbanner (#78C1F9),
+Sigurd og Indias skisser Sharing is Caring har et lyseblått kryssbanner (#78C1F9),
 som igjen er krysset vertikalt av 2 hvite sider,
-ned til et felt som igjen er hvit (se Figma Sharing is Caring).
+ned til et felt som igjen er hvit.
 
-Ja, men det er satt avrundede hjørner, og skygge (type card, har brukt dette selv),
-så bakgrunn og forgrunn blir adskilt.
+03.04.23 Kryssbanner og 2 hvite sider er satt opp som femte side [5],
+med avrundede hjørner, og skygge. Neste mål er å få overlap
+ved hjelp av z-index property.
 
 
 
