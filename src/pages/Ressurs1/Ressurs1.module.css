@@ -39,6 +39,63 @@
   padding-top: 20px; 
 }
 
+.fleksKontainer {
+  background-color: white;
+  display: flex;
+}
+
+
+.venstreHvitBoks {
+  color: black;
+  background-color: #FFFFFF;
+  width : 900px; /* Skal være 1: 2/3 ratio med hoyreHvitBoks */
+  height: 800px; /* Skal være ca 2:1 ratio med hoyreHvitBoks */
+  border-radius: 12px;
+  margin: 20px;
+
+  
+  /* skygge skal definere venstre hvit boks mot hvit bakgrunn 
+  Fant skygge-parametre i Figma: 0px, 8px, 32px 
+  med rgba (0, 98, 186, 0.12) som kanskje er #0062BA 12% 
+  Hmm... vet ikke hvordan jeg setter 12%, går for rgba */
+  box-shadow: 0px 8px 32px rgba(0, 98, 186, 0.12);
+}
+
+.hoyreHvitBoks {
+  color: black;
+  background-color: #FFFFFF;
+  width : 600px;
+  height: 400px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 32px rgba(0, 98, 186, 0.12);
+
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+
+
+.boksOverskrift {
+  color: black;
+  padding: 20px;
+  font-size: 24px;
+
+
+}
+
+.beskrivelseAvRessurs {
+  font-size: 14px;
+  margin-left: 20px;
+}
+
+.fullfoerKnapp {
+  color: white;
+  background-color: blue;
+}
+
+
+
 
 
 
