@@ -1,15 +1,30 @@
-import { NavigeringsKomponent } from '../../components/NavigeringsKomponent';
+import { useState } from 'react'; 
 import { ReactComponent as AltinnIkon } from '../../assets/AltinnLogoMedNavnFraFigma.svg';
 import { ReactComponent as PersonGruppeIkon } from '../../assets/PersonGruppe.svg';
 import bannerKnapperUrl from './banner_hoyre_knapper.png'
 import vognKortUrl from './vognkortRessursEksempel.png'
 import classes from './Ressurs2.module.css';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux'; 
 
 
 export const Ressurs2 = () => {
     const navigate = useNavigate(); // øvre venstre Altinn-ikon og Fullfør-knapp klikkbare:
     // går tilbake til skisseside [5] :
+
+    const [beskrivelse, setBeskrivelse] = useState('TestTest');
+
+
+    // Henter tittel del av resource state .json
+    const tittelResource = useSelector( (state) => state.resource.title) ;
+
+    // bruker et konverteringsmønster fra 
+    // https://iq.js.org/questions/react/how-to-pretty-print-json-with-react
+    const TittelResource = () => {
+        return (
+            <pre>{JSON.stringify(tittelResource, null, 2)}</pre>
+        )
+    }
 
     return (
         <div className='ressurs2Side'>
@@ -36,20 +51,23 @@ export const Ressurs2 = () => {
                                 <p className={classes.boksOverskrift}> Informasjon om ressursen </p>
                                         
                                 <p className={classes.beskrivelseAvRessurs}>
-                                    Beskrivelse av ressursen 
+                                    Beskrivelse av ressursen (engelsk) : {beskrivelse} 
                                 </p>
                                 <form>
                                     <input 
                                         type='text' 
                                         id='beskrivelseTekst' 
                                         name='beskrivelseNavn'
+                                        onChange={() => {
+                                            console.log("test");
+                                        }}
                                     ></input>
                                 </form>
                                 
                                 
 
                                 <p className={classes.beskrivelseAvRessurs}
-                                > Hvem skal bruke ressursen?</p>
+                                > Hvem skal bruke ressursen (nynorsk)?</p>
                                 <form>
                                     <input 
                                         type='text' 
@@ -102,7 +120,11 @@ export const Ressurs2 = () => {
 
                                 <button 
                                     className={classes.fullfoerKnapp}
-                                    onClick={() => navigate('/ressurs1/')}
+                                    onClick={() => {
+                                        console.log("Prøver finne input");
+                                        
+                                        
+                                    } }
                                 >Fullfør</button>
                             </div>         
                         </div>
@@ -143,15 +165,13 @@ export const Ressurs2 = () => {
                              </form>
 
                                
-                                <br></br> 
+                                
                                 <p> (logo) Felles datakatalog ... about ... tools...<br></br>
-                                (SVART BOKS MED søkefelt etc etc etc...) <br></br>
-                                <br></br>
-                                <br></br> 
-                                HER KAN IMPLEMENTERES DYNAMISK JSON FIL<br>
-                                </br>
-                                som reflekterer Redux 
+                                    (SVART BOKS MED søkefelt etc etc etc...) <br></br> <br></br>
+                                    
+                                    DYNAMISK (del av) JSON fil fra Redux state:
                                 </p>
+                                <TittelResource />
                             </div>
                         </div>
                         
