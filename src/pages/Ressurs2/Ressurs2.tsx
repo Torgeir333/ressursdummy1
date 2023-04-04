@@ -14,6 +14,12 @@ export const Ressurs2 = () => {
 
     const [beskrivelse, setBeskrivelse] = useState('TestTest');
 
+    const handleChange = () => {
+        console.log("Er i handleChange: gå til ReactDev");
+        // Bør oppdatere fra ReactDev standard, med ref etc.
+        // https://react.dev/learn/manipulating-the-dom-with-refs#example-focusing-a-text-input
+    }
+
 
     // Henter tittel del av resource state .json
     const tittelResource = useSelector( (state) => state.resource.title) ;
@@ -60,6 +66,7 @@ export const Ressurs2 = () => {
                                         name='beskrivelseNavn'
                                         onChange={() => {
                                             console.log("test");
+                                            handleChange();
                                         }}
                                     ></input>
                                 </form>
@@ -121,7 +128,7 @@ export const Ressurs2 = () => {
                                 <button 
                                     className={classes.fullfoerKnapp}
                                     onClick={() => {
-                                        console.log("Prøver finne input");
+                                        console.log("Prøver finne input: React Ref må brukes");
                                         
                                         
                                     } }
