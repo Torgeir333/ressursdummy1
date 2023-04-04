@@ -16,7 +16,7 @@
 
 span {
   cursor: -webkit-grab; 
-  cursor: grab;
+  cursor: pointer;
 }
 
 span:hover {

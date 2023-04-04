@@ -1,65 +1,25 @@
-import { useState } from 'react';
-
-// import './Sider.css';
 import { NavigeringsKomponent } from '../../components/NavigeringsKomponent';
 import { ReactComponent as AltinnIcon } from '../../assets/AltinnLogoMedNavnFraFigma.svg';
-// import { ReactComponent as BannerKnapper } from '../../assets/banner_hoyre_knapper.png'; // PNG import krasjer
-// Vite Docs importerer sånn:
-// import imgUrl from './img.png'
-// document.getElementById('hero-img').src = imgUrl
-
 import bannerKnapperUrl from './banner_hoyre_knapper.png'
 import vognKortUrl from './vognkortRessursEksempel.png'
-
-import classes from './Ressurs1.module.css';
-
-
+import classes from './Ressurs2.module.css';
+import { useNavigate } from 'react-router-dom'; 
 
 
-export const Ressurs1 = () => {
-
-    const [count, setCount] = useState(0)
+export const Ressurs2 = () => {
+    const navigate = useNavigate(); // øvre venstre Altinn-ikon og Fullfør-knapp klikkbare:
+    // går tilbake til skisseside [5] :
 
     return (
-        <div className='ressurs1Side'>
-            <div>
-                <a href="https://www.altinn.no" target="_blank">
-                    <AltinnIcon />
-                </a>
-            </div>
-
-            <h1>
-                Ressursprosjekt Ressurs1 etter Skisse per 03.04.23
-            </h1>
-
-            <NavigeringsKomponent />
-
-            <p>Vi har fått tilgang til Figma skisser fra Sigurd og India.</p>
-            
-
-            <div className="card">
-                <p> Kommentarer: Testet BannerKnapper men .png krasjer som ReactComponent. <br></br> 
-                    Lyseblått banner først inn her: Figma skisse er 450px høyt, og 1737px vidt<br></br>
-                    Oppå banneret ligger diverse knapper: skal bli svg, men .png blokk (høyre) ennå.
-                </p>
-                <p> Her var tekst oppå banneret: nå AltinnIcon og bannerknapper lagt oppå: 
-                        Denne siden er bred (men 1280px er break, ukjent hvorfor) 
-                        nå pga. padding for .png bannerKnapper.<br></br>
-                        Her skal det komme to hvite bokser (med skygge og avrunding)
-                        som skal overlappe (se z-index property) det lyseblå banneret.
-                </p>
-            </div>
-
-            <hr></hr>
-            
-            
-
-           
+        <div className='ressurs2Side'>
                 
             <div className={classes.bannerOgBoksKontainer}>
 
                 <div className={classes.banner}>
-                    <AltinnIcon className={classes.posisjonAltinnIkon} />
+                    <AltinnIcon 
+                        className={classes.posisjonAltinnIkon} 
+                        onClick={() => navigate('/ressurs1/')}
+                    />
                     <img className={classes.bannerKnapperImage}   src={bannerKnapperUrl} />
                     <div>
                         <img className={classes.vognkortRessursImage}   src={vognKortUrl} />
@@ -93,7 +53,10 @@ export const Ressurs1 = () => {
                                 Hva skal denne ressursen brukes til? (skal ha 4 avkrysningsbokser)
                                     <br></br> <br></br> 
 
-                                <button className={classes.fullfoerKnapp}>Fullfør</button>
+                                <button 
+                                    className={classes.fullfoerKnapp}
+                                    onClick={() => navigate('/ressurs1/')}
+                                >Fullfør</button>
                             </p>          
                         </div>
 
