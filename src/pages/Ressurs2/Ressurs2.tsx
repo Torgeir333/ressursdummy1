@@ -109,16 +109,36 @@ export const Ressurs2 = () => {
                                 <PersonGruppeIkon className={classes.posisjonPersonGruppeIkon}  /> 
                                 Sånn ser det ut for brukerne 
                             </p>
-                            <br></br> 
 
                             <p className={classes.beskrivelseAvRessurs}>
-                                Data.norge(grå) Norge.no (blå) Altinn
-                                <br></br> <br></br> 
-                                Nedtrekks-meny ... så Desktop(blå) Mobile(hvit)
+                                Data.norge(grå) Norge.no (blå) Altinn (grå)
+                                <hr></hr>
+                                <form>
+                                    <input 
+                                        type='text' 
+                                        id='portalBruktTekst' 
+                                        name='portalBruktNavn'
+                                        value='Nedtrekks-meny'
+                                    ></input>
+                                    <span></span>
+                                    <span>....</span>
+                                    <input 
+                                        type='text' 
+                                        id='portalBruktTekst' 
+                                        name='portalBruktNavn'
+                                        value='Desktop/mobil'
+                                    ></input>
+                                </form>
+
+                               
                                 <br></br> <br></br> 
                                 (logo) Felles datakatalog ... about ... tools...<br></br>
-                                (SVART BOKS MED søkefelt etc etc etc...)
+                                (SVART BOKS MED søkefelt etc etc etc...) <br></br>
+                                <br></br>
                                 <br></br> 
+                                HER KAN IMPLEMENTERES DYNAMISK JSON FIL<br>
+                                </br>
+                                som reflekterer Redux 
                             </p>
                         </div>
                         
