@@ -34,25 +34,67 @@ export const Ressurs2 = () => {
                             <p className={classes.boksOverskrift}> Informasjon om ressursen </p>
                                         
                             <p className={classes.beskrivelseAvRessurs}>
-                                Beskrivelse av ressursen (skal ha input boks). <br></br> <br></br>
-                                        <br></br> <br></br>
-
-                                Hvem skal bruke ressursen? (skal ha input boks). <br></br> <br></br>
-                                        <br></br> <br></br>
-
-                                Hvilke områder er ressursen relevant for ? (skal ha multiple valg boks under). <br></br> 
+                                Beskrivelse av ressursen 
+                                <form>
+                                    <input 
+                                        type='text' 
+                                        id='beskrivelseTekst' 
+                                        name='beskrivelseNavn'
+                                    ></input>
+                                </form>
                                 
-                                        <br></br>
-                                Velg mellom 1 til 3 alternativer (skal være grå, og mindre font)
+                                <br></br> 
 
+                                Hvem skal bruke ressursen?
+                                <form>
+                                    <input 
+                                        type='text' 
+                                        id='brukerTekst' 
+                                        name='brukerNavn'
+                                    ></input>
+                                </form>
+                                 <br></br> 
+                                       
+                                Hvilke områder er ressursen relevant for ? (EuroByråkrati multiple valg-bokser). <br></br> 
+                                Velg mellom 1 til 3 alternativer (skal være grå, og mindre font)<br></br>
+                                <br></br>
+                                <form>
+                                <input type='checkbox' id='lawSjekk' name='law' value='law'></input>
+                                    <label>Law</label> <span></span>
+
+                                    <input type='checkbox' id='scienceSjekk' name='science' value='science'></input>
+                                    <label>Science</label>  <br></br>
+
+                                    <input type='checkbox' id='tradeSjekk' name='trade' value='trade'></input>
+                                    <label>Trade</label> <span></span>
+
+                                    <input type='checkbox' id='transportSjekk' name='transport' value='transport'></input>
+                                    <label>Transport</label> <br></br>
+                                </form>
                                         
-                                        <br></br> <br></br><br></br> <br></br>
+                                 <br></br>
 
-                                Om ressursen  <br></br> <br></br>
-
+                                <b>Om ressursen </b> <br></br>
+                                <br></br>
                                 Ressurstype  <br></br>
-                                Hva skal denne ressursen brukes til? (skal ha 4 avkrysningsbokser)
-                                    <br></br> <br></br> 
+                                Hva skal denne ressursen brukes til?
+                                <br></br><br></br>
+                                    <form>
+                                    <input type='checkbox' id='eksternTjenesteSjekk' name='eksternTjeneste' value='eksternTjeneste'></input>
+                                    <label>Eksterne tjenester</label>  <br></br>
+
+                                    <input type='checkbox' id='altinnTjenesteSjekk' name='altinnTjeneste' value='altinnTjeneste'></input>
+                                    <label>Tjenester i Altinn</label> <br></br>
+
+                                    <input type='checkbox' id='friRessursSjekk' name='friRessurs' value='friRessurs'></input>
+                                    <label>Frittstående ressurs</label>  <br></br>
+
+                                    <input type='checkbox' id='hendelseSjekk' name='hendelse' value='hendelse'></input>
+                                    <label>Hendelse eller livshendelse</label> <br></br>
+
+                                    </form>
+
+                                <br></br>
 
                                 <button 
                                     className={classes.fullfoerKnapp}

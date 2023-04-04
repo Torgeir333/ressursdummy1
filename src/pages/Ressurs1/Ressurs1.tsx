@@ -34,20 +34,20 @@ export const Ressurs1 = () => {
 
             <NavigeringsKomponent />
 
-            <p>Vi har fått tilgang til Figma skisser fra Sigurd og India.</p>
+            <p>Har nå tilgang til Figma skisser fra Sigurd og India.<br></br> 
+            Første implementasjon av skisse sees under her. Skisse i arbeid er side [6]</p>
             
 
             <div className="card">
                 <p> Kommentarer: Testet BannerKnapper men .png krasjer som ReactComponent. <br></br> 
-                    Lyseblått banner først inn her: Figma skisse er 450px høyt, og 1737px vidt<br></br>
-                    Oppå banneret ligger diverse knapper: skal bli svg, men .png blokk (høyre) ennå.
+                    Lyseblått banner: Figma skisse er 450px høyt (som her), og 1737px vidt (her 1280px)<br></br>
+                    Oppå banneret ligger diverse knapper: skal bli svg, men .png blokk (høyre) ennå. <br></br>
+                    AltinnIcon og bannerknapper er bare lagt oppå.<br></br>
+                    De to hvite, overlappende boksene er for interaksjon (venstre) <br></br>
+                    og forhåndsvisning (høyre).
+                    
                 </p>
-                <p> Her var tekst oppå banneret: nå AltinnIcon og bannerknapper lagt oppå: 
-                        Denne siden er bred (men 1280px er break, ukjent hvorfor) 
-                        nå pga. padding for .png bannerKnapper.<br></br>
-                        Her skal det komme to hvite bokser (med skygge og avrunding)
-                        som skal overlappe (se z-index property) det lyseblå banneret.
-                </p>
+               
             </div>
 
             <hr></hr>
