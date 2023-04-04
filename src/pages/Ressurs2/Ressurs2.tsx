@@ -31,10 +31,13 @@ export const Ressurs2 = () => {
                 <div className={classes.fleksBoksHolder}>
                         
                         <div className={classes.venstreHvitBoks}>
-                            <p className={classes.boksOverskrift}> Informasjon om ressursen </p>
+                            <div className={classes.innholdIHvitBoks}>
+
+                                <p className={classes.boksOverskrift}> Informasjon om ressursen </p>
                                         
-                            <p className={classes.beskrivelseAvRessurs}>
-                                Beskrivelse av ressursen 
+                                <p className={classes.beskrivelseAvRessurs}>
+                                    Beskrivelse av ressursen 
+                                </p>
                                 <form>
                                     <input 
                                         type='text' 
@@ -43,9 +46,10 @@ export const Ressurs2 = () => {
                                     ></input>
                                 </form>
                                 
-                                <br></br> 
+                                
 
-                                Hvem skal bruke ressursen?
+                                <p className={classes.beskrivelseAvRessurs}
+                                > Hvem skal bruke ressursen?</p>
                                 <form>
                                     <input 
                                         type='text' 
@@ -53,72 +57,79 @@ export const Ressurs2 = () => {
                                         name='brukerNavn'
                                     ></input>
                                 </form>
-                                 <br></br> 
+                                 
                                        
-                                Hvilke områder er ressursen relevant for ? (EuroByråkrati multiple valg-bokser). <br></br> 
-                                Velg mellom 1 til 3 alternativer (skal være grå, og mindre font)<br></br>
-                                <br></br>
+                                <p className={classes.beskrivelseAvRessurs} >
+                                    Hvilke områder er ressursen relevant for ? (EuroByråkrati multiple valg-bokser). <br></br> 
+                                    Velg mellom 1 til 3 alternativer (skal være grå, og mindre font)
+                                </p>
+                            
                                 <form>
-                                <input type='checkbox' id='lawSjekk' name='law' value='law'></input>
+                                <input type='checkbox' id='lawSjekk' name='law' ></input>
                                     <label>Law</label> <span></span>
 
-                                    <input type='checkbox' id='scienceSjekk' name='science' value='science'></input>
+                                    <input type='checkbox' id='scienceSjekk' name='science' ></input>
                                     <label>Science</label>  <br></br>
 
-                                    <input type='checkbox' id='tradeSjekk' name='trade' value='trade'></input>
+                                    <input type='checkbox' id='tradeSjekk' name='trade' ></input>
                                     <label>Trade</label> <span></span>
 
-                                    <input type='checkbox' id='transportSjekk' name='transport' value='transport'></input>
+                                    <input type='checkbox' id='transportSjekk' name='transport' ></input>
                                     <label>Transport</label> <br></br>
                                 </form>
                                         
-                                 <br></br>
+                                 
 
-                                <b>Om ressursen </b> <br></br>
-                                <br></br>
+                                <p className={classes.beskrivelseAvRessurs}
+                                > <b>Om ressursen </b> <br></br>
                                 Ressurstype  <br></br>
-                                Hva skal denne ressursen brukes til?
-                                <br></br><br></br>
+                                Hva skal denne ressursen brukes til?</p>
+                                
                                     <form>
-                                    <input type='checkbox' id='eksternTjenesteSjekk' name='eksternTjeneste' value='eksternTjeneste'></input>
+                                    <input type='radio' id='eksternTjenesteSjekk' name='eksternTjeneste' ></input>
                                     <label>Eksterne tjenester</label>  <br></br>
 
-                                    <input type='checkbox' id='altinnTjenesteSjekk' name='altinnTjeneste' value='altinnTjeneste'></input>
+                                    <input type='radio' id='altinnTjenesteSjekk' name='altinnTjeneste' ></input>
                                     <label>Tjenester i Altinn</label> <br></br>
 
-                                    <input type='checkbox' id='friRessursSjekk' name='friRessurs' value='friRessurs'></input>
+                                    <input type='radio' id='friRessursSjekk' name='friRessurs' ></input>
                                     <label>Frittstående ressurs</label>  <br></br>
 
-                                    <input type='checkbox' id='hendelseSjekk' name='hendelse' value='hendelse'></input>
+                                    <input type='radio' id='hendelseSjekk' name='hendelse' ></input>
                                     <label>Hendelse eller livshendelse</label> <br></br>
 
                                     </form>
-
-                                <br></br>
 
                                 <button 
                                     className={classes.fullfoerKnapp}
                                     onClick={() => navigate('/ressurs1/')}
                                 >Fullfør</button>
-                            </p>          
+                            </div>         
                         </div>
 
 
                         <div className={classes.hoyreHvitBoks}>
-                            <p className={classes.boksOverskrift}>
-                                <PersonGruppeIkon className={classes.posisjonPersonGruppeIkon}  /> 
-                                Sånn ser det ut for brukerne 
-                            </p>
+                            <div className={classes.innholdIHvitBoks}>
 
-                            <p className={classes.beskrivelseAvRessurs}>
-                                Data.norge(grå) Norge.no (blå) Altinn (grå)
+                            
+                                <p className={classes.boksOverskrift}>
+                                    <PersonGruppeIkon className={classes.posisjonPersonGruppeIkon}  /> 
+                                    Sånn ser det ut for brukerne 
+                                </p>
+
+                                <p className={classes.beskrivelseAvRessurs}>
+                                    Data.norge(grå) Norge.no (blå) Altinn (grå) 
+                                </p>
+                            
                                 <hr></hr>
+                            
                                 <form>
                                     <input 
                                         type='text' 
                                         id='portalBruktTekst' 
                                         name='portalBruktNavn'
                                         value='Nedtrekks-meny'
+                                        readOnly
                                     ></input>
                                     <span></span>
                                     <span>....</span>
@@ -127,19 +138,21 @@ export const Ressurs2 = () => {
                                         id='portalBruktTekst' 
                                         name='portalBruktNavn'
                                         value='Desktop/mobil'
+                                        readOnly
                                     ></input>
-                                </form>
+                             </form>
 
                                
-                                <br></br> <br></br> 
-                                (logo) Felles datakatalog ... about ... tools...<br></br>
+                                <br></br> 
+                                <p> (logo) Felles datakatalog ... about ... tools...<br></br>
                                 (SVART BOKS MED søkefelt etc etc etc...) <br></br>
                                 <br></br>
                                 <br></br> 
                                 HER KAN IMPLEMENTERES DYNAMISK JSON FIL<br>
                                 </br>
                                 som reflekterer Redux 
-                            </p>
+                                </p>
+                            </div>
                         </div>
                         
                 </div> 

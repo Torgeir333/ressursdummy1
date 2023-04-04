@@ -98,20 +98,17 @@
 
 .boksOverskrift {
   color: black;
-  padding-left: 20px;
   font-size: 24px;
-
-
 }
 
 .beskrivelseAvRessurs {
   font-size: 14px;
-  margin-left: 20px;
 }
 
 .fullfoerKnapp {
   color: white;
   background-color: blue;
+  margin-top: 10px;
 
   cursor: pointer;
   transition: border-color 0.25s;
@@ -119,6 +116,10 @@
 
 .posisjonPersonGruppeIkon {
   margin-right: 10px;
+}
+
+.innholdIHvitBoks {
+  margin-left: 20px;
 }
 
 
