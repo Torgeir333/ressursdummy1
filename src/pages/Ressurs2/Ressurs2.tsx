@@ -1,5 +1,6 @@
 import { NavigeringsKomponent } from '../../components/NavigeringsKomponent';
-import { ReactComponent as AltinnIcon } from '../../assets/AltinnLogoMedNavnFraFigma.svg';
+import { ReactComponent as AltinnIkon } from '../../assets/AltinnLogoMedNavnFraFigma.svg';
+import { ReactComponent as PersonGruppeIkon } from '../../assets/PersonGruppe.svg';
 import bannerKnapperUrl from './banner_hoyre_knapper.png'
 import vognKortUrl from './vognkortRessursEksempel.png'
 import classes from './Ressurs2.module.css';
@@ -16,7 +17,7 @@ export const Ressurs2 = () => {
             <div className={classes.bannerOgBoksKontainer}>
 
                 <div className={classes.banner}>
-                    <AltinnIcon 
+                    <AltinnIkon 
                         className={classes.posisjonAltinnIkon} 
                         onClick={() => navigate('/ressurs1/')}
                     />
@@ -62,8 +63,9 @@ export const Ressurs2 = () => {
 
 
                         <div className={classes.hoyreHvitBoks}>
-                            <p className={classes.boksOverskrift}> 
-                                (logo) Sånn ser det ut for brukerne 
+                            <p className={classes.boksOverskrift}>
+                                <PersonGruppeIkon className={classes.posisjonPersonGruppeIkon}  /> 
+                                Sånn ser det ut for brukerne 
                             </p>
                             <br></br> 
 
