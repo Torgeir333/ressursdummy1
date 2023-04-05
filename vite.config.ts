@@ -8,4 +8,10 @@ export default defineConfig({
     react(),
     svgr(),
   ],
+  build: {
+    outDir: 'testKatalog',
+    rollupOptions: {
+      
+    }
+  }
 })
