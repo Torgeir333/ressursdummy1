@@ -22,7 +22,20 @@ export const Forsteside = () => {
 
             <NavigeringsKomponent />
 
-            <p>Første iterasjon av Ressurs-prosjektet er her oppe og kjører.</p>
+            <p>
+                Første iterasjon av Ressurs-prosjektet er her oppe og kjører.<br></br>
+                Første implementasjon av første skisse finnes på side [6] <br></br>
+                <br></br>
+                Dette er et <a href="https://vitejs.dev/">Vite </a>
+                prosjekt, som betyr at utviklings-iterasjoner går raskere<br></br>
+                fordi utvikleren ikke trenger vente på å "bygge" prosjektet hver gang han vil se en endring.<br></br>
+                <br></br>
+                Vite har også HMR (hot module reload) som betyr at utvikleren faktisk kan bygge om <br></br>
+                deler av appen, mens resten kjører, og likevel beholder sine data intakt (state, se klikk-knapp under) 
+                <br></br><br></br>
+                Bygg for produksjon (til internett) av javascript og css bundles gjøres av 
+                <a href="https://rollupjs.org/introduction/"> Rollup</a>.
+            </p>
             <br></br>
 
             <div className="card">
