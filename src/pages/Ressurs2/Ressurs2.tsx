@@ -5,30 +5,29 @@ import bannerKnapperUrl from './banner_hoyre_knapper.png'
 import vognKortUrl from './vognkortRessursEksempel.png'
 import classes from './Ressurs2.module.css';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux'; 
+import { useSelector, useDispatch } from 'react-redux'; 
+
+import { change_description_en, change_description_nn } from '../../features/resource/resourceSlice'; // for oppdatering av Redux State
 
 
 export const Ressurs2 = () => {
     const navigate = useNavigate(); // øvre venstre Altinn-ikon og Fullfør-knapp klikkbare:
     // går tilbake til skisseside [5] :
 
-    const [beskrivelse, setBeskrivelse] = useState('TestTest');
+    // Intern state: holder beskrivelse til Fullfør dytter til Redux State
+    const [engelskBeskrivelse, setEngelskBeskrivelse] = useState( useSelector( (state) => state.resource.description.en)  );
+    const [nynorskBeskrivelse, setNynorskBeskrivelse] = useState(useSelector( (state) => state.resource.description.nn) );
+    const dispatch = useDispatch(); // for oppdatering av Redux State
+    
 
-    const handleChange = () => {
-        console.log("Er i handleChange: gå til ReactDev");
-        // Bør oppdatere fra ReactDev standard, med ref etc.
-        // https://react.dev/learn/manipulating-the-dom-with-refs#example-focusing-a-text-input
-    }
-
-
-    // Henter tittel del av resource state .json
-    const tittelResource = useSelector( (state) => state.resource.title) ;
+    // Henter beskrivelse del av resource state .json
+    const beskrivelseResource = useSelector( (state) => state.resource.description) ;
 
     // bruker et konverteringsmønster fra 
     // https://iq.js.org/questions/react/how-to-pretty-print-json-with-react
-    const TittelResource = () => {
+    const BeskrivelseResource = () => {
         return (
-            <pre>{JSON.stringify(tittelResource, null, 2)}</pre>
+            <pre>{JSON.stringify(beskrivelseResource, null, 2)}</pre>
         )
     }
 
@@ -57,31 +56,44 @@ export const Ressurs2 = () => {
                                 <p className={classes.boksOverskrift}> Informasjon om ressursen </p>
                                         
                                 <p className={classes.beskrivelseAvRessurs}>
-                                    Beskrivelse av ressursen (engelsk) : {beskrivelse} 
+                                    Beskrivelse av ressursen (engelsk-navn nå):
                                 </p>
-                                <form>
+
+                                <>
                                     <input 
-                                        type='text' 
-                                        id='beskrivelseTekst' 
-                                        name='beskrivelseNavn'
-                                        onChange={() => {
-                                            console.log("test");
-                                            handleChange();
+                                        value={engelskBeskrivelse}
+                                        onChange={ (event) => { 
+                                            setEngelskBeskrivelse(event.target.value);
+                                                // kunne kjøre dispatch til resourceSlice her samtidig
+                                                // om jeg ønsker simultan oppdatering... men hva
+                                                // skal da FULLFØR knappen gjøre? Sende til backend?
+
+                                                // Får respons på Redux State
+                                            dispatch(change_description_en(event.target.value));
                                         }}
-                                    ></input>
-                                </form>
+                                    />
+                                </>
+                                
                                 
                                 
 
-                                <p className={classes.beskrivelseAvRessurs}
-                                > Hvem skal bruke ressursen (nynorsk)?</p>
-                                <form>
+                                <p className={classes.beskrivelseAvRessurs}> 
+                                    Hvem skal bruke ressursen (nynorsk nå)?
+                                </p>
+                                <>
                                     <input 
-                                        type='text' 
-                                        id='brukerTekst' 
-                                        name='brukerNavn'
-                                    ></input>
-                                </form>
+                                        value={nynorskBeskrivelse}
+                                        onChange={ (event) => { 
+                                            setNynorskBeskrivelse(event.target.value);
+                                                // kunne kjøre dispatch til resourceSlice her samtidig
+                                                // om jeg ønsker simultan oppdatering... men hva
+                                                // skal da FULLFØR knappen gjøre? Sende til backend?
+
+                                                // Får respons på Redux State
+                                            dispatch(change_description_nn(event.target.value));
+                                        }}
+                                    />
+                                </>
                                  
                                        
                                 <p className={classes.beskrivelseAvRessurs} >
@@ -128,9 +140,7 @@ export const Ressurs2 = () => {
                                 <button 
                                     className={classes.fullfoerKnapp}
                                     onClick={() => {
-                                        console.log("Prøver finne input: React Ref må brukes");
-                                        
-                                        
+                                        navigate('/ressurs1/');
                                     } }
                                 >Fullfør</button>
                             </div>         
@@ -176,9 +186,9 @@ export const Ressurs2 = () => {
                                 <p> (logo) Felles datakatalog ... about ... tools...<br></br>
                                     (SVART BOKS MED søkefelt etc etc etc...) <br></br> <br></br>
                                     
-                                    DYNAMISK (del av) JSON fil fra Redux state:
+                                    BESKRIVELSE: dynamisk (del av) JSON fil fra Redux state:
                                 </p>
-                                <TittelResource />
+                                <BeskrivelseResource />
                             </div>
                         </div>
                         

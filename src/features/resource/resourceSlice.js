@@ -80,6 +80,16 @@ const resourceSlice = createSlice({
         decrease: (state) => {
             state.testProperty--
         },
+		// yet anoter state transition: endrer engelsk beskrivelse
+		// skal ta inn String engelskBeskrivelse...
+        change_description_en: (state, action) => {
+            state.description.en = action.payload
+        },
+		// yet anoter state transition: endrer nynorsk beskrivelse
+		// skal ta inn String nynorskBeskrivelse...
+        change_description_nn: (state, action) => {
+            state.description.nn = action.payload
+        },
     },
 })
 
@@ -87,4 +97,4 @@ const resourceSlice = createSlice({
 export default resourceSlice.reducer;
 
 // eksporterer actions som named exports
-export const { increase, decrease } = resourceSlice.actions;
+export const { increase, decrease, change_description_en, change_description_nn } = resourceSlice.actions;
