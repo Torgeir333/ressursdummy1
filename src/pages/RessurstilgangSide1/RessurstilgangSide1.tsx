@@ -1,23 +1,14 @@
-import { useState } from 'react';
-
-// import './Sider.css';
 import { NavigeringsKomponent } from '../../components/NavigeringsKomponent';
 import { ReactComponent as AltinnIcon } from '../../assets/AltinnLogoMedNavnFraFigma.svg';
-// import { ReactComponent as BannerKnapper } from '../../assets/banner_hoyre_knapper.png'; // PNG import krasjer
-// Vite Docs importerer sånn:
-// import imgUrl from './img.png'
-// document.getElementById('hero-img').src = imgUrl
-
-// import bannerKnapperUrl from './banner_hoyre_knapper.png'
-// import vognKortUrl from './vognkortRessursEksempel.png'
 
 import classes from './RessurstilgangSide1.module.css';
 
+import { useSelector } from 'react-redux'; 
 
 
 export const RessurstilgangSide1 = () => {
 
-    const [count, setCount] = useState(0)
+    
 
     return (
         <div className='ressurs1Side'>
@@ -44,72 +35,56 @@ export const RessurstilgangSide1 = () => {
                 <p> 
                     Kommentarer: Under delestrek (hr), så skal jeg simulere Runes 2x3 ressurs.json <br></br>
                     tekstbokser etc.
-                    
                 </p>
-               
             </div>
-
             <hr></hr>
             
-            
-
-           
                 
             <div className={classes.bannerOgBoksKontainer}>
 
                 <div className={classes.banner}>
                     <AltinnIcon className={classes.posisjonAltinnIkon} />
-                    
-                    <div>
-                        <p>Bilde her</p>
-                    </div>
                 </div>
                    
 
                 <div className={classes.fleksBoksHolder}>
                         
                         <div className={classes.venstreHvitBoks}>
-                            <p className={classes.boksOverskrift}> Informasjon om ressursen </p>
+
+                            <p className={classes.boksOverskrift}> Informasjon om ressursen (RuneSkisse)</p>
                                         
                             <p className={classes.beskrivelseAvRessurs}>
-                                Beskrivelse av ressursen (skal ha input boks). <br></br> <br></br>
-                                        <br></br> <br></br>
-
-                                Hvem skal bruke ressursen? (skal ha input boks). <br></br> <br></br>
-                                        <br></br> <br></br>
-
-                                Hvilke områder er ressursen relevant for ? (skal ha multiple valg boks under). <br></br> 
-                                
-                                        <br></br>
-                                Velg mellom 1 til 3 alternativer (skal være grå, og mindre font)
-
+                                Tittel (norsk bokmål) (skal ha input boks). <br></br> <br></br>
                                         
-                                        <br></br> <br></br><br></br> <br></br>
+                                Description (skal ha input boks). <br></br> <br></br>
 
-                                Om ressursen  <br></br> <br></br>
+                                RightsDescription (skal ha input boks). <br></br> <br></br>
+                            
+                                <br></br> <br></br>
 
-                                Ressurstype  <br></br>
-                                Hva skal denne ressursen brukes til? (skal ha 4 avkrysningsbokser)
-                                    <br></br> <br></br> 
+                                Sector (dropdown/multiple select). <br></br> <br></br>
+                                
+                                        
+                                Thematic area (dropdown/multiple select) <br></br> <br></br>
+          
+                                ResourceType: "MaskinportenSchema" : (dropdown/multiple select) <br></br> <br></br>
 
-                                <button className={classes.fullfoerKnapp}>Fullfør</button>
+                                <br></br> <br></br>
+
+                                <button className={classes.fullfoerKnapp}>Skift Språk</button>
                             </p>          
                         </div>
 
 
                         <div className={classes.hoyreHvitBoks}>
                             <p className={classes.boksOverskrift}> 
-                                (logo) Sånn ser det ut for brukerne 
+                                Sånn ser det ut for brukerne
                             </p>
-                            <br></br> 
-
+                            
                             <p className={classes.beskrivelseAvRessurs}>
-                                Data.norge(grå) Norge.no (blå) Altinn
+                                Data.norge(grå) Norge.no (blå) Altinn (noe annet)
                                 <br></br> <br></br> 
-                                Nedtrekks-meny ... så Desktop(blå) Mobile(hvit)
-                                <br></br> <br></br> 
-                                (logo) Felles datakatalog ... about ... tools...<br></br>
-                                (SVART BOKS MED søkefelt etc etc etc...)
+                                Trenger ny skisse fra Sigurd og India her.
                                 <br></br> 
                             </p>
                         </div>

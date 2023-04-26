@@ -1,17 +1,17 @@
 
-
-
-
 .bannerOgBoksKontainer {
-  /* Skal holde elementene som delvis skal overlappe */
+  /* Skal holde elementene som delvis skal overlappe 
+  Inneholder også AltinnLogoMedTekst ikon. */
   position: relative;
 }
 
 .banner {
-  /* lyseblått banner skal gå tvers over siden,
-  høyden er ennå uklar ut fra S&I Figma skissee skisse: muligens 450px */
+  /* lyseblått banner som går tvers over siden: setter til 1000px for nå. 
+  Skal nok ikke være med til /frontend/ressurstilgang/ der et mørkeblått-banner
+  skal være, men greitt her for å se de hvite tekstboksene.  */
   background-color: #78C1F9;
-  width : 100%;
+  /* width : 100%; */
+  width: 1000px;
   height: 450px;
 
   position: relative;
@@ -21,15 +21,13 @@
 
 .fleksBoksHolder {
   /* Holder vensteHvitBoks og hoyreHvitBoks 
-  Skal delvis overlappe lyseblå banner
-  */
+  Skal delvis overlappe lyseblå banner  */
   
   display: flex;
-
   width: 100%;
   position: absolute; 
   z-index: 2;
-  top: 240px;
+  top: 70px;
 }
 
 .venstreHvitBoks {
@@ -56,48 +54,20 @@
 }
 
 
-
-
 .posisjonAltinnIkon {
   /* Bannerkomponent */
   /* AltInnIkon skal være øverst til venstre
   men på samme høyde som bannerKnapper til høyre. 
   Padding-bottom er et hack for å aligne med bannerKnapperImage. Fix senere */
   padding-left: 20px;
-  padding-bottom: 20px;
+  padding-top: 20px;
 }
-
-.bannerKnapperImage {
-  /* Bannerkomponent */
-  /* Kommentar: bygger lyseblått bannerKnapper 03.04.23 
-  som skal ligge oppå lyseblått banner a la Figma fra S&I
-  Etterhvert skal disse knappene/symbolene importeres som .svg og aktiveres */
-  height: 50px;
-  padding-left: 760px;
-  padding-top: 20px; 
-}
-
-
-.vognkortRessursImage {
-  /* Bannerkomponent */
-  /* Kommentar:  vognKortEksempel ligger til venstre i skisse */
-  height: 100px;
-  padding-left: 0px;
-  padding-top: 20px; 
-}
-
-
-
-
-
 
 
 .boksOverskrift {
   color: black;
   padding: 20px;
   font-size: 24px;
-
-
 }
 
 .beskrivelseAvRessurs {
@@ -109,17 +79,6 @@
   color: white;
   background-color: blue;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
