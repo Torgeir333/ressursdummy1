@@ -14,7 +14,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'; // fra Vishwas Query 
 // settes i render-seksjon, like før lukking av QueryClientProvider,
 // med to props, en for at man skal åpne selv, og at knapp er nede til høyre
 // ved kjøring: se https://www.youtube.com/watch?v=PJSVowvL2MU&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=5
-
+// Fjerner for bygging: <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
 
 i18next.use(initReactI18next).init({
   lng: 'nb',
