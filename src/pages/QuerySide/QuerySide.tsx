@@ -46,7 +46,18 @@ export const QuerySide = () => {
 
         enabled: false,
     }
-    ); // tredje parameter er config objekt, 
+    ); 
+    
+    // cacheTime default er 5 minutter = 30 000 ms (video 6)
+    // staleTime default er 0 --> om man setter til 30 sekunder (de video7), så vil
+    // ikke navigering vekk og tilbake trigge refetch (reload?!): kan observeres i Webinspector
+    
+    // video8: refetchOnMount default er true; vil kjøre refetch om data er "stale",
+    // refetchOnWindowFocus: default er true; kjører bakgrunns fetch når man gir fokus
+    // til siden igjen etter å ha klikket på en annen side
+
+    // Eldre kommentar:
+    // tredje parameter er config objekt, 
     // Merk at refetchOnMount: false ikke synes å blokkere nytt kall
     // ---> se video10: mount-vil-gi-nytt-kall, om ikke 
     // { enabled: false }   ---> men da må vi faktisk tvinge frem kall med Devtools
