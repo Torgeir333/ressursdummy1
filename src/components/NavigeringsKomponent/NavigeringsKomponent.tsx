@@ -13,7 +13,8 @@ export const NavigeringsKomponent = () => {
         <span onClick={() => navigate('/minidashboard/')}>[ 3 ]</span> 
         <span onClick={() => navigate('/queryside/')}>[ 4 ]</span>
         <span onClick={() => navigate('/ressurs1/')}>[ 5 ]</span> 
-        <span onClick={() => navigate('/ressurs2/')}>[ 6 ]</span>  
+        <span onClick={() => navigate('/ressurs2/')}>[ 6 ]</span> 
+        <span onClick={() => navigate('/ressurstilgang1/')}>[ 7 ]</span>   
     </p>
     )
 }

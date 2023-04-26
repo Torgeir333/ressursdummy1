@@ -5,6 +5,7 @@ import { MiniDashboard } from '../pages/MiniDashboard';
 import { QuerySide } from '../pages/QuerySide';
 import { Ressurs1 } from '../pages/Ressurs1';
 import { Ressurs2 } from '../pages/Ressurs2';
+import { RessurstilgangSide1 } from '../pages/RessurstilgangSide1';
 
 export const App = () => {
   
@@ -17,6 +18,7 @@ export const App = () => {
         <Route path='/queryside' element={<QuerySide /> } />
         <Route path='/ressurs1' element={<Ressurs1 /> } />
         <Route path='/ressurs2' element={<Ressurs2 /> } />
+        <Route path='/ressurstilgang1' element={<RessurstilgangSide1 /> } />
       </Routes>
     </div>
   )
