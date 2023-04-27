@@ -132,9 +132,6 @@ export const RessurstilgangSide1 = () => {
                                 />
                             </div>
 
-                            <p className={classes.beskrivelseAvRessurs}>
-                                Sector (dropdown/multiple select). <br></br> <br></br>
-                            </p> 
 
                             <div className={classes.valgmeny1}>
                                 <RessursSektorValg
@@ -193,9 +190,6 @@ export const RessurstilgangSide1 = () => {
                             <div className={classes.knappDiv}>
                               <button className={classes.bekreftRessurs}>Bekreft Ressurs</button> 
                             </div>
-                               
-
-
                         </div>
                         
                 </div> 
