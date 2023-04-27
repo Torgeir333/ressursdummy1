@@ -1,14 +1,14 @@
 import { Select } from '@digdir/design-system-react';
 
 // Ordet Valg er her kortversjon av nedtrekksmeny
-// Dette er tredje nedtrekksmeny fra toppen, derav tallet 3 i rops
+// Dette er andre nedtrekksmeny fra toppen, derav tallet 2 i props
 // Basert på /frontend/dashboard/components/ServiceOwnerSelector.tsx
 // som er brukt i /frontend/dashboard/pages/CreateService
 
 // mulig at value her bør types til number
-interface IRessursTypeValgProps {
-    propValueValg3: string;
-    propHandleValg3Change: (newValue: string) => void;
+interface IRessursTematikkValgProps {
+    propValueValg2: string;
+    propHandleValg2Change: (newValue: string) => void;
 }
 
 // Denne er for options array, se Storyboard Docs for Select komponent
@@ -17,26 +17,26 @@ interface SingleSelectOption {
     label: string,
 }
 
-export const RessursTypeValg = ({
-    propValueValg3,
-    propHandleValg3Change,
+export const RessursTematikkValg = ({
+    propValueValg2,
+    propHandleValg2Change,
 
-}: IRessursTypeValgProps ) => {
+}: IRessursTematikkValgProps ) => {
 
     // Hardkoder mulige valg foreløpig: må også håndtere leting etter 
     // digdir@design-system-react krever Type for options array
-    const ressursTypeValg: SingleSelectOption[] = [
+    const ressursTematikkValg: SingleSelectOption[] = [
         {
-            value: "MaskinportenSchema",
-            label: "MaskinportenSchema"
+            value: "Area51",
+            label: "Area51"
         }, 
         {
-            value: "Alternativ1",
-            label: "Alternativ1"
+            value: "Area52",
+            label: "Area52"
         }, 
         {
-            value: "Alternativ2",
-            label: "Alternativ2"
+            value: "ArcticUFObase",
+            label: "ArcticUFObase"
         },
     ];
 
@@ -52,14 +52,14 @@ export const RessursTypeValg = ({
 
     // forstår ikke helt onChange i Select så jeg kopierer fra ServiceOwnerSelector slik:
     // tror value: string blir da sendt opp til parent component og State der...
-    const handleChange = (value:string) => propHandleValg3Change(value);
+    const handleChange = (value:string) => propHandleValg2Change(value);
 
     return (
         <Select
-            inputId='ressursTypeValgFelt'
-            label='Ressurstype (norsk bokmål)'
-            options={ressursTypeValg}
-            value={propValueValg3}
+            inputId='ressursTematikkValgFelt'
+            label='Tematisk Område (norsk bokmål)'
+            options={ressursTematikkValg}
+            value={propValueValg2}
             onChange={ handleChange }    
         />
     )

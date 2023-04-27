@@ -2,10 +2,14 @@ import { NavigeringsKomponent } from '../../components/NavigeringsKomponent';
 import { ReactComponent as AltinnIcon } from '../../assets/AltinnLogoMedNavnFraFigma.svg';
 
 import classes from './RessurstilgangSide1.module.css';
-import { TextField } from '@digdir/design-system-react';
-import { RessursTittelInput } from '../../components/RessursTittelInput'
-import { RessursBeskrivelseInput } from '../../components/RessursBeskrivelseInput'
-import { RessursRettighetsBeskrivelseInput } from '../../components/RessursRettighetsBeskrivelseInput'
+import { TextField } from '@digdir/design-system-react'; // Blir nå brukt i importerte komponenter
+import { Select } from '@digdir/design-system-react'; // Blir nå brukt i importerte komponenter
+import { RessursTittelInput } from '../../components/RessursTittelInput';
+import { RessursBeskrivelseInput } from '../../components/RessursBeskrivelseInput';
+import { RessursRettighetsBeskrivelseInput } from '../../components/RessursRettighetsBeskrivelseInput';
+import { RessursSektorValg } from '../../components/RessursSektorValg';
+import { RessursTematikkValg } from '../../components/RessursTematikkValg';
+import { RessursTypeValg } from '../../components/RessursTypeValg';
 import { useState } from 'react'; 
 import { useSelector } from 'react-redux'; // skal hente ressurs.json data fra Redux State
 
@@ -34,6 +38,28 @@ export const RessurstilgangSide1 = () => {
 
     const handleTextField3Change = (input: string) => {
         setValueTextField3(input);
+    }
+
+
+    // Første Nedtrekksmeny/Valg : Sektor
+    const [valueValg1, setValueValg1] = useState("Alarm");
+
+    const handleValg1Change = (input: string) => {
+        setValueValg1(input);
+    }
+
+    // Andre Nedtrekksmeny/Valg : Thematic Area
+    const [valueValg2, setValueValg2] = useState("Area51");
+
+    const handleValg2Change = (input: string) => {
+        setValueValg2(input);
+    }
+
+    // Tredje Nedtrekksmeny/Valg : Ressurstype a la MaskinportenSchema
+    const [valueValg3, setValueValg3] = useState("MaskinportenSchema");
+
+    const handleValg3Change = (input: string) => {
+        setValueValg3(input);
     }
     
 
@@ -107,19 +133,36 @@ export const RessurstilgangSide1 = () => {
                             </div>
 
                             <p className={classes.beskrivelseAvRessurs}>
-                            
-
                                 Sector (dropdown/multiple select). <br></br> <br></br>
-                                
-                                        
-                                Thematic area (dropdown/multiple select) <br></br> <br></br>
-          
-                                ResourceType: "MaskinportenSchema" : (dropdown/multiple select) <br></br> <br></br>
+                            </p> 
 
-                                <br></br> <br></br>
+                            <div className={classes.valgmeny1}>
+                                <RessursSektorValg
+                                    propValueValg1 = {valueValg1} 
+                                    propHandleValg1Change = {handleValg1Change}
+                                />
+                            </div>
 
-                                <button className={classes.fullfoerKnapp}>Skift Språk</button>
-                            </p>          
+                            <div className={classes.valgmeny2}>
+                                <RessursTematikkValg
+                                    propValueValg2 = {valueValg2} 
+                                    propHandleValg2Change = {handleValg2Change}
+                                />
+                            </div>
+
+                            <div className={classes.valgmeny3}>
+                                <RessursTypeValg
+                                    propValueValg3 = {valueValg3} 
+                                    propHandleValg3Change = {handleValg3Change}
+                                />
+                            </div>
+
+                               
+
+                            <div className={classes.knappDiv}>
+                              <button className={classes.skiftSpraak}>Skift Språk</button> 
+                            </div>
+                               
                         </div>
 
 
@@ -142,9 +185,13 @@ export const RessurstilgangSide1 = () => {
                                 <h5>Beskrivelse = {valueTextField2}</h5>
                                 <h5>Rettighetsbeskrivelse = {valueTextField3}</h5>
 
-                                <h5>Sector = {valueTextField1}</h5>
-                                <h5>Thematic Area = {valueTextField1}</h5>
-                                <h5>ResourceType = MaskinportenSchema</h5>
+                                <h5>Sektor = {valueValg1}</h5>
+                                <h5>Tematisk Område = {valueValg2}</h5>
+                                <h5>Ressurstype = {valueValg3}</h5>
+                            </div>
+
+                            <div className={classes.knappDiv}>
+                              <button className={classes.bekreftRessurs}>Bekreft Ressurs</button> 
                             </div>
                                
 

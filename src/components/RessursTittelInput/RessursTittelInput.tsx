@@ -8,7 +8,6 @@ interface IRessursTittelInputProps {
 export const RessursTittelInput = ({
     propValueTextField1,
     propHandleTextField1Change,
-
 }: IRessursTittelInputProps ) => {
     return (
         <TextField
