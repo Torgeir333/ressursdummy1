@@ -2,7 +2,11 @@ import { NavigeringsKomponent } from '../../components/NavigeringsKomponent';
 import { ReactComponent as AltinnIcon } from '../../assets/AltinnLogoMedNavnFraFigma.svg';
 
 import classes from './RessurstilgangSide1.module.css';
-
+import { TextField } from '@digdir/design-system-react';
+import { RessursTittelInput } from '../../components/RessursTittelInput'
+import { RessursBeskrivelseInput } from '../../components/RessursBeskrivelseInput'
+import { RessursRettighetsBeskrivelseInput } from '../../components/RessursRettighetsBeskrivelseInput'
+import { useState } from 'react'; 
 import { useSelector } from 'react-redux'; // skal hente ressurs.json data fra Redux State
 
 
@@ -10,6 +14,28 @@ export const RessurstilgangSide1 = () => {
 
     // hente inn data fra ressurs.json i Redux her
     // men mangler f.eks. sector ---> hente fra nav.json i resourceregistry repo f.eks.?
+
+    // Første TextField fra @digdir/design-system-react;
+    const [valueTextField1, setValueTextField1] = useState("gammelTittel");
+
+    const handleTextField1Change = (input: string) => {
+        setValueTextField1(input);
+    }
+
+    // Andre tekstfelt : Description = Beskrivelse
+    const [valueTextField2, setValueTextField2] = useState("gammelBeskrivelse");
+
+    const handleTextField2Change = (input: string) => {
+        setValueTextField2(input);
+    }
+
+    // Tredje tekstfelt : RettighetsBeskrivelse = RightsDescription
+    const [valueTextField3, setValueTextField3] = useState("gammelRettighetsBeskrivelse");
+
+    const handleTextField3Change = (input: string) => {
+        setValueTextField3(input);
+    }
+    
 
     return (
         <div className='ressurs1Side'>
@@ -58,15 +84,30 @@ export const RessurstilgangSide1 = () => {
                         <div className={classes.venstreHvitBoks}>
 
                             <p className={classes.boksOverskrift}> Informasjon om ressursen (RuneSkisse)</p>
-                                        
-                            <p className={classes.beskrivelseAvRessurs}>
-                                Tittel (norsk bokmål) (skal ha input boks). <br></br> <br></br>
-                                        
-                                Description (skal ha input boks). <br></br> <br></br>
 
-                                RightsDescription (skal ha input boks). <br></br> <br></br>
+                            <div className={classes.tekstFelt1}>
+                                <RessursTittelInput
+                                    propValueTextField1 = {valueTextField1} 
+                                    propHandleTextField1Change = {handleTextField1Change}
+                                />
+                            </div>
                             
-                                <br></br> <br></br>
+                            <div className={classes.tekstFelt2}>
+                                <RessursBeskrivelseInput
+                                    propValueTextField2 = {valueTextField2} 
+                                    propHandleTextField2Change = {handleTextField2Change}
+                                />
+                            </div>
+
+                            <div className={classes.tekstFelt3}>
+                                <RessursRettighetsBeskrivelseInput
+                                    propValueTextField3 = {valueTextField3} 
+                                    propHandleTextField3Change = {handleTextField3Change}
+                                />
+                            </div>
+
+                            <p className={classes.beskrivelseAvRessurs}>
+                            
 
                                 Sector (dropdown/multiple select). <br></br> <br></br>
                                 
@@ -93,6 +134,21 @@ export const RessurstilgangSide1 = () => {
                                 Trenger ny skisse fra Sigurd og India her.
                                 <br></br> 
                             </p>
+                            
+                            <div className={classes.oppdatertRessurs}>
+                                <h4>Her er oppdatert ressurs:</h4>
+                            
+                                <h5>Tittel = {valueTextField1}</h5>
+                                <h5>Beskrivelse = {valueTextField2}</h5>
+                                <h5>Rettighetsbeskrivelse = {valueTextField3}</h5>
+
+                                <h5>Sector = {valueTextField1}</h5>
+                                <h5>Thematic Area = {valueTextField1}</h5>
+                                <h5>ResourceType = MaskinportenSchema</h5>
+                            </div>
+                               
+
+
                         </div>
                         
                 </div> 
