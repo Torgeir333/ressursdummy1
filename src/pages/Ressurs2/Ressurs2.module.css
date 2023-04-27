@@ -64,7 +64,7 @@
   men på samme høyde som bannerKnapper til høyre. 
   Padding-bottom er et hack for å aligne med bannerKnapperImage. Fix senere */
   padding-left: 20px;
-  padding-bottom: 20px;
+  padding-top: 20px;
 
   /* AltinnIkon er nå klikkbar: må få indikasjon på plass bruker grov grab*/
   cursor: -webkit-grab; 

@@ -3,12 +3,13 @@ import { ReactComponent as AltinnIcon } from '../../assets/AltinnLogoMedNavnFraF
 
 import classes from './RessurstilgangSide1.module.css';
 
-import { useSelector } from 'react-redux'; 
+import { useSelector } from 'react-redux'; // skal hente ressurs.json data fra Redux State
 
 
 export const RessurstilgangSide1 = () => {
 
-    
+    // hente inn data fra ressurs.json i Redux her
+    // men mangler f.eks. sector ---> hente fra nav.json i resourceregistry repo f.eks.?
 
     return (
         <div className='ressurs1Side'>
@@ -27,7 +28,12 @@ export const RessurstilgangSide1 = () => {
             <p>
             Altinn Studio Docker, Webpack og NginX eksperimenter,<br></br>
             viser at vi er klar for å hakke ut en App pakket inn i UserService etc.<br></br>
-            Jeg vil også beholde Banner del, som vel ligger inni App faktisk.
+            Jeg vil også beholde Banner del, som vel ligger inni App faktisk.<br></br>
+            Et problem er at RuneSkisse sector er tom array i alle .json jeg finner.<br></br>
+            Mens thematicArea alltid er "http://publications.europa.eu/resource/authority/eurovoc/2468"<br></br>
+            ResourceType er "MaskinportenSchema", OK, men kunne trenge alternativer... Be Rune om sånt?<br></br>
+            Eller bare legg inn en array med alternativer... <br></br>
+            Jeg burde vel også få tak i disse 300 ressursene som skal finnes?! Fikk noe av Remi før påske...
             </p>
             
 
